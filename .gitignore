@@ -1,0 +1,51 @@
+# Node modules
+node_modules/
+
+# Konfigurasi Sistem Operasi
+.DS_Store        # MacOS
+Thumbs.db        # Windows
+desktop.ini      # Windows
+
+# Log dan file runtime
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+
+# Cache
+.cache/
+.vscode/
+.idea/
+
+# File environment (jika ada API Key atau variabel rahasia)
+.env
+.env.local
+.env.*.local
+
+# File temporer editor teks
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# File Git terkait
+.git/
+
+# Tailwind JIT cache
+*.css.map
+.tailwind-cache/
+
+# File build hasil kompilasi
+*.min.css
+*.min.js
+
+# Output test atau coverage (opsional jika menggunakan alat seperti Jest atau Cypress)
+coverage/
+test-output/
+
+# File personal/backup
+*.~undo-tree~
+*.backup
+*.backup.*
+
