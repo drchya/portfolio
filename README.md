@@ -104,7 +104,7 @@ You can customize the following based on your preferences:
 
 ## Preview
 
-![Portfolio Website Screenshot](./public/assets/preview.png)
+![Portfolio Website Screenshot](./src/img/portfolio.png)
 
 ---
 
