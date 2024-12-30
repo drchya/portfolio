@@ -11,15 +11,15 @@ input, textarea {
 }
 
 .nav-link {
-    @apply mx-1 lg:mx-5 px-2 py-1 font-medium hover:text-slate-900 hover:border-b border-slate-900 transition duration-200 ease-in-out
+    @apply mx-1 lg:mx-5 px-2 py-1 font-medium hover:text-slate-900 hover:border-b border-slate-900 transition duration-200 ease-in-out;
 }
 
 .nav-link.active {
-    @apply text-slate-900 border-b border-slate-900
+    @apply text-[#FF674D] border-b border-[#FF674D];
 }
 
 .nav-link.inactive {
-    @apply text-slate-300;
+    @apply text-[#6C757D];
 }
 
 .tab-link.active {
@@ -27,19 +27,19 @@ input, textarea {
 }
 
 .btn-primary {
-    @apply px-4 py-2 rounded-md text-white bg-slate-500 hover:bg-slate-600 transition duration-300 ease-in-out;
+    @apply px-4 py-2 rounded-md text-[#FFFFFF] bg-[#FF674D] hover:bg-[#CC341A] transition duration-200 ease-in-out;
+}
+
+.btn-secondary {
+    @apply px-4 py-2 rounded-md text-[#FFFFFF] bg-[#28A745] hover:bg-[#1E7C34] transition duration-200 ease-in-out;
 }
 
 .h1 {
-    @apply font-bold text-xl uppercase;
+    @apply font-bold text-xl uppercase text-[#1A1A1A];
 }
 
 .h3 {
-    @apply text-xl font-semibold text-gray-600;
-}
-
-.h4 {
-    @apply text-lg font-medium text-gray-700;
+    @apply text-lg font-semibold text-[#333333];
 }
 
 .card {
@@ -47,25 +47,25 @@ input, textarea {
 }
 
 .card .card-title {
-    @apply text-lg font-bold text-gray-800;
+    @apply text-lg font-bold text-[#4D4D4D];
 }
 
 .card .card-subtitle {
-    @apply text-gray-600 mb-2;
+    @apply text-[#FF674D] mb-1;
 }
 
 .flex-container {
-    display: flex;
-    flex-wrap: wrap; /* Bungkus elemen jika ruang tidak cukup */
-    gap: 0.3rem; /* Jarak antar tombol */
-    justify-content: flex-start; /* Ratakan tombol ke kiri */
-    align-items: center; /* Pastikan semua tombol sejajar vertikal */
+    @apply flex flex-wrap gap-4 justify-start items-center mt-2 mb-1;
 }
 
 .filter-btn {
-    white-space: nowrap; /* Hindari teks terpotong menjadi beberapa baris */
-    padding: 0.5rem 1rem; /* Konsistenkan padding tombol */
-    text-align: center; /* Pusatkan teks di dalam tombol */
-    font-size: 0.875rem; /* Ukuran teks tombol */
+    @apply text-gray-500 font-medium hover:text-primary-500 transition duration-200 ease-in-out;
 }
 
+.filter-btn.active {
+    @apply text-primary-500;
+}
+
+.filter-content {
+    @apply my-2;
+}
