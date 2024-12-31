@@ -35,11 +35,11 @@ input, textarea {
 }
 
 .h1 {
-    @apply font-bold text-xl uppercase text-[#1A1A1A];
+    @apply font-bold text-3xl uppercase text-[#1A1A1A];
 }
 
 .h3 {
-    @apply text-lg font-semibold text-[#333333];
+    @apply text-xl font-semibold text-[#333333];
 }
 
 .card {

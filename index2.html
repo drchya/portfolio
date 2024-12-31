@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Rangga Dwi Cahya</title>
-    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="src/css/output.css">
 
     <!-- Icons Style -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
 
     <!-- Font Style -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +18,9 @@
 
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body class="bg-[#F9F9F9]">
     <nav id="navbar" class="py-4 fixed top-0 left-0 w-full z-10 text-center text-xs md:text-sm lg:text-base hover:text-slate-300 transition duration-200 ease-in-out backdrop-blur-none">
@@ -38,7 +43,7 @@
         </div>
     </section>
 
-    <section id="home" class="container py-16 min-h-screen max-w-5xl flex flex-col justify-center">
+    <section id="home" class="container min-h-screen max-w-5xl flex flex-col justify-center">
         <h1 class="h1 mb-2 text-start">About Me</h1>
         <div class="flex flex-col space-y-1">
             <p class="indent-5">
@@ -49,7 +54,7 @@
             </p>
         </div>
         <div class="my-4">
-            <a href="#" class="btn-primary">Download CV</a>
+            <a href="./src/cv/cv.pdf" download="CV Rangga Dwi Cahya.pdf" class="btn-primary">Download CV</a>
         </div>
     </section>
 
@@ -138,7 +143,7 @@
         </div>
     </section>
 
-    <section id="project" class="container py-16 min-h-screen max-w-5xl">
+    <section id="project" class="container min-h-screen max-w-5xl">
         <div class="min-h-screen flex flex-col justify-center">
             <h1 class="h1 mb-2">Project & Skills</h1>
             <div>
@@ -165,92 +170,126 @@
               
                 <!-- Content -->
                 <div class="filter-content mt-2" data-category="front-end">
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-2">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-4">
                         <div class="group">
-                            <i class="text-2xl text-[#2965F1] md:text-gray-500 group-hover:text-[#2965F1] fa-brands fa-css3-alt transition druation-300 ease-in-out"></i>
+                            <div class="flex items-center space-x-2 mb-1">
+                                <i class="text-2xl text-[#2965F1] md:text-gray-500 group-hover:text-[#2965F1] fa-brands fa-css3-alt transition druation-300 ease-in-out"></i>
+                                <span class="text-sm text-gray-500 group-hover:text-[#2965F1] font-medium transition duration-300 ease-in-out">
+                                    CSS
+                                </span>
+                            </div>
                             <div class="w-full h-4 bg-[#94B2F8] md:bg-gray-200 group-hover:bg-[#94B2F8] transition duration-300 ease-in-out">
                                 <div class="h-4 bg-[#2965F1] md:bg-gray-500 group-hover:bg-[#2965F1] flex justify-center items-center text-white transition duration-300 ease-in-out" style="width: 78%;">
-                                    <span>78%</span>
+                                    <span class="text-xs cursor-default">78%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="group">
-                            <i class="text-2xl text-[#E34F26] md:text-gray-500 group-hover:text-[#E34F26] fa-brands fa-html5 transition duration-300 ease-in-out"></i>
+                            <div class="flex items-center space-x-2 mb-1">
+                                <i class="text-2xl text-[#E34F26] md:text-gray-500 group-hover:text-[#E34F26] fa-brands fa-html5 transition duration-300 ease-in-out"></i>
+                                <span class="text-sm text-gray-500 group-hover:text-[#E34F26] font-medium transition duration-300 ease-in-out">
+                                    HTML
+                                </span>
+                            </div>
                             <div class="w-full h-4 bg-[#F1A792] md:bg-gray-200 group-hover:bg-[#F1A792] transition duration-300 ease-in-out">
                                 <div class="h-4 bg-[#E34F26] md:bg-gray-500 group-hover:bg-[#E34F26] flex justify-center items-center text-white transition duration-300 ease-in-out" style="width: 90%;">
-                                    <span>90%</span>
+                                    <span class="text-xs cursor-default">90%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="group">
-                            <i class="text-2xl text-[#F7DF1E] md:text-gray-500 group-hover:text-[#F7DF1E] fa-brands fa-js transition duration-300 ease-in-out"></i>
+                            <div class="flex items-center space-x-2 mb-1">
+                                <i class="text-2xl text-[#F7DF1E] md:text-gray-500 group-hover:text-[#F7DF1E] fa-brands fa-js transition duration-300 ease-in-out"></i>
+                                <span class="text-sm text-gray-500 group-hover:text-[#F7DF1E] font-medium transition duration-300 ease-in-out">JavaScript</span>
+                            </div>
                             <div class="w-full h-4 bg-[#FBEF8E] md:bg-gray-200 group-hover:bg-[#FBEF8E] transition duration-300 ease-in-out">
                                 <div class="h-4 bg-[#F7DF1E] md:bg-gray-500 group-hover:bg-[#F7DF1E] flex justify-center items-center text-white transition duration-300 ease-in-out" style="width: 45%;">
-                                    <span>45%</span>
+                                    <span class="text-xs cursor-default">45%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="group">
-                            <i class="text-2xl text-[#61DAFB] md:text-gray-500 group-hover:text-[#61DAFB] fa-brands fa-react transition duration-300 ease-in-out"></i>
+                            <div class="flex items-center space-x-2 mb-1">
+                                <i class="text-2xl text-[#61DAFB] md:text-gray-500 group-hover:text-[#61DAFB] fa-brands fa-react transition duration-300 ease-in-out"></i>
+                                <span class="text-sm text-gray-500 group-hover:text-[#61DAFB] font-medium transition duration-300 ease-in-out">React JS</span>
+                            </div>
                             <div class="w-full h-4 bg-[#B0EDFD] md:bg-gray-200 group-hover:bg-[#B0EDFD] transition duration-300 ease-in-out">
                                 <div class="h-4 bg-[#61DAFB] md:bg-gray-500 group-hover:bg-[#61DAFB] flex justify-center items-center text-white transition duration-300 ease-in-out" style="width: 28%;">
-                                    <span>28%</span>
+                                    <span class="text-xs cursor-default">28%</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="filter-content" data-category="back-end">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-2">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-4">
                         <div class="group">
-                            <i class="text-2xl text-[#777BB4] md:text-gray-500 group-hover:text-[#777BB4] fa-brands fa-php transition druation-300 ease-in-out"></i>
+                            <div class="flex items-center space-x-2 mb-1">
+                                <i class="text-2xl text-[#777BB4] md:text-gray-500 group-hover:text-[#777BB4] fa-brands fa-php transition druation-300 ease-in-out"></i>
+                                <span class="text-sm text-gray-500 group-hover:text-[#777BB4] font-medium transition duration-300 ease-in-outs">PHP</span>
+                            </div>
                             <div class="w-full h-4 bg-[#BBBDD9] md:bg-gray-200 group-hover:bg-[#BBBDD9] transition duration-300 ease-in-out">
                                 <div class="h-4 bg-[#777BB4] md:bg-gray-500 group-hover:bg-[#777BB4] flex justify-center items-center text-white transition druation-300 ease-in-out" style="width: 76%;">
-                                    <span>76%</span>
+                                    <span class="text-xs cursor-default">76%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="group">
-                            <i class="text-2xl text-[#FF2D20] md:text-gray-500 group-hover:text-[#FF2D20] fa-brands fa-laravel transition duration-300 ease-in-out"></i>
+                            <div class="flex items-center space-x-2 mb-1">
+                                <i class="text-2xl text-[#FF2D20] md:text-gray-500 group-hover:text-[#FF2D20] fa-brands fa-laravel transition duration-300 ease-in-out"></i>
+                                <span class="text-sm text-gray-500 group-hover:text-[#FF2D20] font-medium transition duration-300 ease-in-out">Laravel</span>
+                            </div>
                             <div class="w-full h-4 bg-[#FF968F] md:bg-gray-200 group-hover:bg-[#FF968F] transition duration-300 ease-in-out">
                                 <div class="h-4 bg-[#FF2D20] md:bg-gray-500 group-hover:bg-[#FF2D20] flex justify-center items-center text-white transition duration-300 ease-in-out" style="width: 60%;">
-                                    <span>60%</span>
+                                    <span class="text-xs cursor-default">60%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="group">
-                            <i class="text-2xl text-[#00758F] md:text-gray-500 group-hover:text-[#00758F] fa-solid fa-database transition duration-300 ease-in-out"></i>
+                            <div class="flex items-center space-x-2 mb-1">
+                                <i class="text-2xl text-[#00758F] md:text-gray-500 group-hover:text-[#00758F] fa-solid fa-database transition duration-300 ease-in-out"></i>
+                                <span class="text-sm text-gray-500 group-hover:text-[#00758F] font-medium transition duration-300 ease-in-out">MySQL</span>
+                            </div>
                             <div class="w-full h-4 bg-[#80BAC7] md:bg-gray-200 group-hover:bg-[#80BAC7] transition duration-300 ease-in-out">
                                 <div class="h-4 bg-[#00758F] md:bg-gray-500 group-hover:bg-[#00758F] flex justify-center items-center text-white transition duration-300 ease-in-out" style="width: 54%;">
-                                    <span>54%</span>
+                                    <span class="text-xs cursor-default">54%</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="filter-content" data-category="others">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-3 gap-y-2">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-3 gap-y-4">
                         <div class="group">
-                            <i class="text-2xl text-[#F24E1E] md:text-gray-500 group-hover:text-[#F24E1E] fa-brands fa-figma transition duration-300 ease-in-out"></i>
+                            <div class="flex items-center space-x-2 mb-1">
+                                <i class="text-2xl text-[#F24E1E] md:text-gray-500 group-hover:text-[#F24E1E] fa-brands fa-figma transition duration-300 ease-in-out"></i>
+                                <span class="text-sm text-gray-500 group-hover:text-[#F24E1E] font-medium transition duration-300 ease-in-out">Figma</span>
+                            </div>
                             <div class="w-full h-4 bg-[#F9A68E] md:bg-gray-200 group-hover:bg-[#F9A68E] transition duration-300 ease-in-out">
                                 <div class="h-4 bg-[#F24E1E] md:bg-gray-500 group-hover:bg-[#F24E1E] flex justify-center items-center text-white transition duration-300 ease-in-out" style="width: 44%;">
-                                    <span>44%</span>
+                                    <span class="text-xs cursor-default">44%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="group">
-                            <i class="text-2xl text-slate-900 md:text-gray-500 group-hover:text-slate-900 fa-solid fa-headset transition duration-300 ease-in-out"></i>
+                            <div class="flex items-center space-x-2 mb-1">
+                                <i class="text-2xl text-slate-900 md:text-gray-500 group-hover:text-slate-900 fa-solid fa-headset transition duration-300 ease-in-out"></i>
+                                <span class="text-sm text-gray-500 group-hover:text-slate-900 font-medium transition duration-300 ease-in-out">IT Support</span>
+                            </div>
                             <div class="w-full h-4 bg-slate-200 md:bg-gray-200 gruop-hover:bg-slate-200 transition duration-300 ease-in-out">
                                 <div class="h-4 bg-slate-900 md:bg-gray-500 group-hover:bg-slate-900 flex justify-center items-center text-white transition duration-300 ease-in-out" style="width: 42%;">
-                                    <span>42%</span>
+                                    <span class="text-xs cursor-default">42%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="group">
-                            <i class="text-2xl text-[#F05033] md:text-gray-500 group-hover:text-[#F05033] fa-brands fa-git-alt transition duration-300 ease-in-out"></i>
+                            <div class="flex items-center space-x-2 mb-1">
+                                <i class="text-2xl text-[#F05033] md:text-gray-500 group-hover:text-[#F05033] fa-brands fa-git-alt transition duration-300 ease-in-out"></i>
+                                <span class="text-sm text-gray-500 group-hover:text-[#F05033] font-medium transition duration-300 ease-in-out">GIT</span>
+                            </div>
                             <div class="w-full h-4 bg-[#F7A799] md:bg-gray-200 group-hover:bg-[#F7A799] transition duration-300 ease-in-out">
                                 <div class="h-4 bg-[#F05033] md:bg-gray-500 group-hover:bg-[#F05033] flex justify-center items-center text-white transition duration-300 ease-in-out" style="width: 42%;">
-                                    <span>42%</span>
+                                    <span class="text-xs cursor-default">42%</span>
                                 </div>
                             </div>
                         </div>
@@ -259,195 +298,123 @@
             </div>
         </div>
         
-        <div class="">
-            <h1 class="h1">What I Offer?</h1>
-            <div>
-                <h3 class="h3">Back-end</h3>
-                <p>
-                    As a Back-end Developer, I focus on building application logic, managing database, and creating efficient solutions for Back-end needs. With expertise in PHP, MySQL, and frameworks such as Laravel and CodeIgniter, I help build scalable, secure, and business-oriented websites.
-                </p>
-            </div>
-            <div>
-                <h3 class="h3">Front-end</h3>
-                <p>
-                    As a Front-end developer, I am still at the beginner level, but I am actively learning and improving my skills. I design responsive and functional user interfaces. With basic experience in JavaScript and the use of frameworks such as TailwindCSS and Bootstrap, I am working to create designs that are suitable for various devices and user-friendly.
-                </p>
-            </div>
-            <div>
-                <h3 class="h3">UI Design</h3>
-                <p>
-                    As UI Designer, I am at the beginner level. I am learning to understand the principles of interface design that are both appealing and user-friendly. While I am still in early stages, I am commited to continuously improving my skills in the area.
-                </p>
-            </div>
-            <div>
-                <h3 class="h3">IT Support</h3>
-                <p>
-                    As an IT Support professional, I do not yet have extensive experience, but I handled some basic cases, such as operating system re-installations, simple network repairs, and software troubleshooting.
-                </p>
+        <div class="min-h-screen flex flex-col justify-center">
+            <h1 class="h1 mb-4">What I Offer?</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 py-2 gap-8 group">
+                <div class="p-6 border rounded-lg hover:shadow-lg transition duration-300 ease-in-out group-hover:blur-sm hover:!blur-none">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-server text-2xl"></i>
+                        </div>
+                        <h3 class="h3 ml-3">Back-end</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        As a Back-end Developer, I focus on building application logic, managing database, and creating efficient solutions for Back-end needs. With expertise in PHP, MySQL, and frameworks such as Laravel and CodeIgniter, I help build scalable, secure, and business-oriented websites.
+                    </p>
+                </div>
+                <div class="p-6 border rounded-lg hover:shadow-lg transition duration-300 ease-in-out group-hover:blur-sm hover:!blur-none">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12  bg-primary-100 text-primary-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-paint-brush text-2xl"></i>
+                        </div>
+                        <h3 class="h3 ml-3">Front-end</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        As a Front-end developer, I am still at the beginner level, but I am actively learning and improving my skills. I design responsive and functional user interfaces. With basic experience in JavaScript and the use of frameworks such as TailwindCSS and Bootstrap, I am working to create designs that are suitable for various devices and user-friendly.
+                    </p>
+                </div>
+                <div class="p-6 border rounded-lg hover:shadow-lg transition duration-300 ease-in-out group-hover:blur-sm hover:!blur-none">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12  bg-primary-100 text-primary-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-palette text-2xl"></i>
+                        </div>
+                        <h3 class="h3 ml-3">UI Design</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        As UI Designer, I am at the beginner level. I am learning to understand the principles of interface design that are both appealing and user-friendly. While I am still in early stages, I am commited to continuously improving my skills in the area.
+                    </p>
+                </div>
+                <div class="p-6 border rounded-lg hover:shadow-lg transition duration-300 ease-in-out group-hover:blur-sm hover:!blur-none">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12  bg-primary-100 text-primary-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-headset text-2xl"></i>
+                        </div>
+                        <h3 class="h3 ml-3">IT Support</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        As an IT Support professional, I do not yet have extensive experience, but I handled some basic cases, such as operating system re-installations, simple network repairs, and software troubleshooting.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="container py-16 min-h-screen max-w-5xl">
-        <h1 class="h1">Contact</h1>
-        <p class="text-sm">Open to job opportunities or freelance projects. Let's discuss how can i help you!</p>
-        <div>
-            <form>
-                <div>
-                    <label>Username</label>
-                    <input type="text" class="w-full px-4 py-3 border border-gray-500 rounded bg-transparent placeholder:text-base focus:outline-none focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition duration-200 ease-in-out">
-                </div>
-                <div>
-                    <label>Subject</label>
-                    <input type="text" class="w-full px-4 py-3 border border-gray-500 rounded bg-transparent placeholder:text-base focus:outline-none focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition duration-200 ease-in-out">
-                </div>
-                <div>
-                    <label>Text</label>
-                    <textarea rows="6" class="w-full px-4 py-3 border border-gray-500 rounded bg-transparent placeholder:text-base focus:outline-none focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition duration-200 ease-in-out" placeholder="Text"></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Submit</button>
-            </form>
+    <section id="contact" class="container min-h-screen max-w-xl flex flex-col justify-center">
+        <div class="mb-4 text-center">
+            <h1 class="h1 mb-2">Contact</h1>
+            <p class="text-sm text-gray-600">Open to job opportunities or freelance projects. Let's discuss how can i help you!</p>
         </div>
+        <form id="contactForm" action="src/php/form_email.php" method="POST" class="space-y-2">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full px-2 py-1 border-b border-gray-300 bg-gray-50 placeholder-gray-400 text-gray-900 focus:outline-none focus:border-primary-500 transition duration-300 ease-in-out"
+                    placeholder="Enter your email"
+                    required
+                    oninput="updateBorder(this)"
+                >
+            </div>
+            <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                <input 
+                    type="text"
+                    id="subject"
+                    email="subject"
+                    class="w-full px-2 py-1 border-b border-gray-300 bg-gray-50 placeholder-gray-400 text-gray-900 focus:outline-none focus:border-primary-500 transition duration-300 ease-in-out"
+                    placeholder="Enter your subject"
+                    required
+                    oninput="updateBorder(this)"
+                >
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    class="w-full px-2 py-1 border-b border-gray-300 bg-gray-50 placeholder-gray-400 text-gray-900 focus:outline-none focus:border-primary-500 transition duration-300 ease-in-out"
+                    placeholder="Enter your message"
+                    oninput="updateBorder(this)"
+                    required
+                ></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Submit</button>
+        </form>
     </section>
 
     <div class="container mx-auto w-3/4 h-[0.5px] bg-[#DEE2E6] max-w-5xl">
         <hr class="" />
     </div>
 
-    <footer class="py-3 container mx-auto flex flex-col space-y-3 lg:flex-row items-center justify-between text-sm font-medium max-w-4xl">
-        <p>&copy; 2024 <a href="https://instagram.com/_drchy">drchya</a>. All rights reserved.</p>
+    <footer class="py-3 container mx-auto flex flex-col space-y-3 lg:flex-row items-center justify-between text-xs text-gray-700 max-w-4xl">
+        <p>&copy; 2024 <a href="https://instagram.com/_drchy" class="text-primary-500 hover:text-primary-700 transition duration-300 ease-in-out">drchya</a>. All rights reserved.</p>
         <div class="flex items-center space-x-4">
-            <a href="https://github.com/drchya" target="_blank"><i data-feather="github"></i></a>
-            <a href="https://instagram.com/_drchy" target="_blank"><i data-feather="instagram"></i></a>
-            <a href="https://www.linkedin.com/in/rangga-dwi-cahya-8922b1241/"><i data-feather="linkedin"></i></a>
+            <a href="https://github.com/drchya" class="text-primary-500 md:text-gray-700 hover:text-primary-500 transition duration-300 ease-in-out" target="_blank"><i data-feather="github"></i></a>
+            <a href="https://instagram.com/_drchy" class="text-primary-500 md:text-gray-700 hover:text-primary-500 transition duration-300 ease-in-out" target="_blank"><i data-feather="instagram"></i></a>
+            <a href="https://www.linkedin.com/in/rangga-dwi-cahya-8922b1241/" class="text-primary-500 md:text-gray-700 hover:text-primary-500 transition duration-300 ease-in-out" target="_blank"><i data-feather="linkedin"></i></a>
         </div>
         <p>Indonesia</p>
     </footer>
 
+    <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="src/js/script.js"></script>
+
     <script>
         feather.replace();
-
-        // NAVBAR START
-        document.addEventListener("scroll", () => {
-            const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll(".nav-link");
-            const navbar = document.getElementById("navbar");
-            if (window.scrollY > 50) {
-                navbar.classList.add("shadow", "backdrop-blur-sm", "bg-[#F8F9FA]", "bg-opacity-50")
-            } else {
-                navbar.classList.remove("shadow", "backdrop-blur-sm", "bg-[#F8F9FA]", "bg-opacity-50")
-            }
-
-            let currentSection = "";
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop - 70; // Sesuaikan offset
-                const sectionHeight = section.offsetHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    currentSection = section.getAttribute("id");
-                }
-            });
-
-            navLinks.forEach((link) => {
-                if (link.getAttribute("href") === `#${currentSection}`) {
-                    link.classList.add("active");
-                    link.classList.remove("inactive");
-                } else {
-                    link.classList.remove("active");
-                    link.classList.add("inactive");
-                }
-            });
-        });
-        // NAVBAR END
-
-        // TABS START
-        document.addEventListener("DOMContentLoaded", () => {
-            const buttons = document.querySelectorAll(".filter-btn");
-            const contents = document.querySelectorAll(".filter-content");
-
-            buttons.forEach((button) => {
-                button.addEventListener("click", () => {
-                    const filter = button.getAttribute("data-filter");
-
-                    // Tampilkan atau sembunyikan konten
-                    contents.forEach((content) => {
-                        const category = content.getAttribute("data-category");
-                        content.style.display = filter === "all" || category === filter ? "block" : "none";
-                    });
-
-                    // Atur tombol aktif
-                    buttons.forEach((btn) => btn.classList.remove("active"));
-                    button.classList.add("active");
-                });
-            });
-        });
-        // TABS END
-
-        // MOVING TEXT START
-        document.addEventListener("DOMContentLoaded", () => {
-            const animatedText = document.getElementById("animated-text");
-            const texts = ["Web Developer", "Freelancer"];
-            let index = 0;
-
-            setInterval(() => {
-                // Animasi keluar
-                animatedText.style.transform = "translateY(-100%)";
-
-                setTimeout(() => {
-                    // Perbarui teks setelah animasi keluar
-                    index = (index + 1) % texts.length; // Berputar ke teks berikutnya
-                    animatedText.textContent = texts[index];
-
-                    // Reset posisi ke bawah untuk animasi masuk
-                    animatedText.style.transform = "translateY(100%)";
-
-                    // Animasi masuk
-                    setTimeout(() => {
-                        animatedText.style.transform = "translateY(0)";
-                    }, 100); // Delay singkat untuk memulai animasi masuk
-                }, 500); // Durasi animasi keluar
-            }, 3000); // Interval animasi 3 detik
-        });
-        // MOVING TEXT END
-
-        // TRUNCATE TEXT PARAGRAF START
-        document.addEventListener("DOMContentLoaded", () => {
-            const cardTexts = document.querySelectorAll(".card-text");
-
-            cardTexts.forEach((cardText) => {
-                const fullText = cardText.dataset.fullText; // Ambil teks penuh dari data attribute
-                const truncatedText = fullText.slice(0, 150) + "..."; // Potong teks
-
-                let isExpanded = false;
-
-                // Set teks awal ke truncate
-                cardText.innerHTML = `
-                    ${truncatedText}
-                    <span class="toggle-button text-gray-500 cursor-pointer">Show more</span>
-                `;
-
-                // Tambahkan event listener untuk setiap card
-                cardText.addEventListener("click", (e) => {
-                    if (e.target.classList.contains("toggle-button")) {
-                        isExpanded = !isExpanded;
-
-                        if (isExpanded) {
-                            // Tampilkan teks penuh
-                            cardText.innerHTML = `
-                                ${fullText}
-                                <span class="toggle-button text-gray-500 cursor-pointer">Show less</span>
-                            `;
-                        } else {
-                            // Potong kembali teks
-                            cardText.innerHTML = `
-                                ${truncatedText}
-                                <span class="toggle-button text-gray-500 cursor-pointer">Show more</span>
-                            `;
-                        }
-                    }
-                });
-            });
-        });
-        // TRUNCATE TEXT PARAGRAF END
     </script>
 </body>
 </html>
